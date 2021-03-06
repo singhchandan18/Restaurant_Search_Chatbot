@@ -1,0 +1,94 @@
+actions:
+- action_restart
+- action_search_restaurants
+- action_send_email
+- action_verify_location
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email_address
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_email_address
+- utter_email_sent
+- utter_goodbye
+- utter_greet
+- utter_invalid_email
+- utter_teir3
+entities:
+- affirm
+- budget
+- cuisine
+- email
+- location
+intents:
+- restaurant_search
+- greet
+- deny
+- affirm
+- stop
+- goodbye
+- sendemail
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: Lesser than Rs. 300
+      title: Lesser than Rs. 300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: What price range are you looking at?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_email_address:
+  - text: Please share the email ID to send the details to.
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: i cannot understand
+  utter_email_address:
+  - text: "\n Shall I send the details of the top 10 restaurant to your email ID ?"
+  utter_email_sent:
+  - text: Email sent successfully to the provided email ID.
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_invalid_email:
+  - text: Please provide the valid email ID.
+  utter_teir3:
+  - text: We do not operate in that area yet Can you please specify some other location
+slots:
+  budget:
+    type: text
+  cuisine:
+    type: text
+  email:
+    type: text
+  email_sent:
+    initial_value: false
+    type: bool
+  location:
+    type: text
+  location_match:
+    initial_value: false
+    type: bool
